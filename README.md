@@ -5,8 +5,8 @@ Ideal para um MVP (“produto mínimo viável”) de site responsivo, com menu m
 
 # INTEGRANTES 📄
 
-Paulo Victor Vieira Trindade
-Sarah da Rosa Ribeiro
+Paulo Victor Vieira Trindade,
+Sarah da Rosa Ribeiro,
 Wellyson Souza da Rocha
 
 ---
