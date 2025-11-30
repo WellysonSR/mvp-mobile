@@ -22,7 +22,6 @@ Ideal para um MVP (“produto mínimo viável”) de site responsivo, com menu m
    
 Entre na pasta do projeto:
 
-bash
 Copiar código
 cd mvp-mobile
 Abra o arquivo index.html no navegador (duplo clique ou arraste para o browser).
