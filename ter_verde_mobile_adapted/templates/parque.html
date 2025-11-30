@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ park.name }}{% endblock %}
+{% block content %}
+<article class="park-detail">
+  <h1>{{ park.name }}</h1>
+  <p class="lead">{{ park.description }}</p>
+
+  {% if park.id == 1 %}
+    <div class="park-hero">
+    <img src="{{ url_for('static', filename='img/teresopolis-1.jpg') }}" alt="{{ park.name }} - vista aérea">
+  </div>
+
+  <section class="gallery">
+    <h2>Galeria</h2>
+    <div class="gallery-grid">
+      <img src="{{ url_for('static', filename='img/teresopolis-1.jpg') }}" alt="Foto 1 - {{ park.name }}">
+      <img src="{{ url_for('static', filename='img/teresopolis-2.jpg') }}" alt="Foto 2 - {{ park.name }}">
+      <img src="{{ url_for('static', filename='img/teresopolis-3.jpg') }}" alt="Foto 3 - {{ park.name }}">
+    </div>
+  </section>
+  {% endif %}
+
+  <section>
+    <h2>Trilhas</h2>
+    <div class="cards">
+      {% for t in trails %}
+      <div class="card">
+        <h3>{{ t.name }}</h3>
+        <p>Dificuldade: {{ t.difficulty }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2>Eventos</h2>
+    <ul class="events">
+      {% for e in events %}
+      <li><strong>{{ e.title }}</strong> — {{ e.date }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+</article>
+{% endblock %}

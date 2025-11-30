@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tere Verde - {% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <nav class="topnav">
+    <div class="logo"><a href="{{ url_for('index') }}">Tere Verde</a></div>
+
+    <div class="hamburger" id="hamburger" aria-label="Abrir menu">
+      <div></div><div></div><div></div>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      <li><a href="{{ url_for('trilhas') }}">Trilhas</a></li>
+      <li><a href="{{ url_for('eventos') }}">Eventos</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('trilhas') }}">Trilhas</a>
+    <a href="{{ url_for('eventos') }}">Eventos</a>
+  </div>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>© 2025 Tere Verde • Projeto MVP Mobile</p>
+    <p>Desenvolvido pelos autores</p>
+    <p>Paulo Victor Vieira Trindade</p>
+    <p>Sarah da Rosa Ribeiro</p>
+    <p>Wellyson Souza da Rocha</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

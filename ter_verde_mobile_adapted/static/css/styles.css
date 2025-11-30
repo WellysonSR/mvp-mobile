@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f9f9f9;
+    color: #222;
+    font-size: clamp(14px, 1.6vw, 16px);
+}
+
+.container {
+    width: min(92%, 1200px);
+    margin: 24px auto;
+}
+
+/* -------- NAVBAR -------- */
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: #0d6b28;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.topnav .logo a {
+    color: #fff;
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: clamp(14px, 2vw, 22px);
+}
+
+/* -------- HAMBURGER MENU -------- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.hamburger div {
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px 18px;
+    background: #0d6b28;
+    animation: slideDown 0.25s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* -------- CARDS -------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: clamp(14px, 2vw, 20px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 10px 6px 6px;
+    margin-bottom: 12px;
+    background: linear-gradient(180deg, #ecfff1, #eaf9ef);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: clamp(10px, 2vw, 14px) clamp(14px, 3vw, 18px);
+    background: #0d6b28;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 14px;
+    color: #0b5a24;
+}
+
+.lead {
+    color: #3b6f40;
+    line-height: 1.55;
+    margin-bottom: 16px;
+}
+
+.park-hero {
+    margin: 16px 0 22px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(20, 77, 34, 0.12);
+}
+.park-hero img { width: 100%; height: 320px; object-fit: cover; display: block; }
+
+.gallery { margin-top: 14px; }
+.gallery h2 { color: #114e27; margin-bottom: 8px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.gallery-grid img { width: 100%; height: 140px; object-fit: cover; border-radius: 10px; transition: transform .18s ease, box-shadow .18s ease; cursor: pointer; }
+.gallery-grid img:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 8px 30px rgba(10, 45, 20, 0.12); }
+
+.events { margin-top: 10px; color: #2b5830; }
+
+
+/* -------- MEDIA QUERIES -------- */
+
+/* Tablets (até 992px) */
+@media (max-width: 992px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Celulares pequenos (até 360px) */
+@media (max-width: 360px) {
+    .topnav {
+        padding: 10px 12px;
+    }
+
+    .hamburger div {
+        width: 24px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .btn {
+        padding: 10px 12px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+}
