@@ -3,6 +3,12 @@
 Uma versão simples e funcional de interface web com adaptação para dispositivos móveis.  
 Ideal para um MVP (“produto mínimo viável”) de site responsivo, com menu mobile/navigation via “hamburger”.
 
+# INTEGRANTES 📄
+
+Paulo Victor Vieira Trindade
+Sarah da Rosa Ribeiro
+Wellyson Souza da Rocha
+
 ---
 
 ## ✨ Visão geral
